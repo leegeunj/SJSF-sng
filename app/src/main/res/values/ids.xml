@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="cast_notification_id" />
+    <item type="id" name="auto_focus" />
+    <item type="id" name="decode" />
+    <item type="id" name="decode_failed" />
+    <item type="id" name="decode_succeeded" />
+    <item type="id" name="launch_product_query" />
+    <item type="id" name="quit" />
+    <item type="id" name="restart_preview" />
+    <item type="id" name="return_scan_result" />
+    <item type="id" name="search_book_contents_failed" />
+    <item type="id" name="search_book_contents_succeeded" />
+
+    <!-- 기존 코드 보존하며 false 제거 -->
+    <item type="id" name="webView1" />
+    <item type="id" name="progressBar1" />
+    <item type="id" name="layout_top" />
+    <item type="id" name="listView1" />
+    <item type="id" name="textView1" />
+    <item type="id" name="textView2" />
+    <item type="id" name="textView3" />
+    <item type="id" name="textView4" />
+    <item type="id" name="textView5" />
+    <item type="id" name="linearLayout0" />
+    <item type="id" name="linearLayout1" />
+    <item type="id" name="linearLayout2" />
+    <item type="id" name="editText1" />
+    <item type="id" name="editText2" />
+    <item type="id" name="button1" />
+    <item type="id" name="preview_view" />
+    <item type="id" name="viewfinder_view" />
+    <item type="id" name="result_view" />
+    <item type="id" name="barcode_image_view" />
+    <item type="id" name="status_view" />
+    <item type="id" name="imageView1" />
+    <item type="id" name="top_line" />
+    <item type="id" name="top_title" />
+    <item type="id" name="top_home" />
+    <item type="id" name="top_list" />
+    <item type="id" name="top_save" />
+    <item type="id" name="top_write" />
+    <item type="id" name="top_push" />
+    <item type="id" name="top_search" />
+    <item type="id" name="login_company" />
+    <item type="id" name="button3" />
+    <item type="id" name="editText3" />
+    <item type="id" name="editText4" />
+    <item type="id" name="layout_bottom" />
+    <item type="id" name="spinner1" />
+    <item type="id" name="spinner2" />
+    <item type="id" name="imageView2" />
+    <item type="id" name="imageView9" />
+    <item type="id" name="imageView3" />
+    <item type="id" name="imageView4" />
+    <item type="id" name="imageView5" />
+    <item type="id" name="imageView6" />
+    <item type="id" name="imageView7" />
+    <item type="id" name="text1" />
+    <item type="id" name="main_check_box" />
+    <item type="id" name="radioGroup" />
+    <item type="id" name="menu_settings" />
+</resources>

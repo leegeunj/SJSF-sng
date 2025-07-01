@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:elevation="@dimen/fab_margin">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/white"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:paddingLeft="14dp"
+                android:text="2019.01"
+                android:textColor="@color/blue_dark"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_alignParentLeft="true"/>
+            <TextView
+                android:id="@+id/textView5"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:textSize="13sp"
+                android:textColor="@color/font_333"
+                android:text="- 오일 : 2019.01.02 / 2 시간"
+                android:gravity="center" />
+
+
+            <TextView
+                android:id="@+id/textView3"
+                android:ellipsize="end"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:gravity="center"
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:textSize="13sp"
+                android:textColor="@color/blue_dark"
+                android:text="홍길동"
+                android:maxWidth="150dp"
+                android:maxLines="1"
+                android:visibility="invisible"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@color/white"
+            >
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:paddingLeft="14dp"
+                android:text="엔진"
+                android:textColor="@color/blue_dark"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:maxLines="1"
+                android:maxWidth="220dp"
+                android:text=" - 필터 : 2019.01.01 / 1 시간"
+                android:textColor="@color/font_333"
+                android:textSize="13sp" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_bottom_l"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:layout_marginLeft="20dp"
+                android:text="비고"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

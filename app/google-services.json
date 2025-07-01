@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "177478092332",
+    "firebase_url": "https://sng-push.firebaseio.com",
+    "project_id": "sng-push",
+    "storage_bucket": "sng-push.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:177478092332:android:bbc3c588c59cff7b",
+        "android_client_info": {
+          "package_name": "com.creative.sng.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "177478092332-3fc9rj4k2gvj146iseccvu4ctj57de0j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCvsXKWYei2yTHrxxNEKn71MTplWMmX3RA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "177478092332-3fc9rj4k2gvj146iseccvu4ctj57de0j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

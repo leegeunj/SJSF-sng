@@ -1,0 +1,156 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    //    compileSdkVersion 25 → 구버전 주석처리
+    //    buildToolsVersion "25.0.2" → AGP 7.x 이상에서는 자동 처리됨
+    // ↓ 최신 버전에 맞게 변경
+    compileSdk 34
+    namespace 'com.creative.sng.app'  // ✅ 요 줄 추가
+//    buildToolsVersion "25.0.2" // AGP 7.x 이상에서는 필요 없음
+
+    defaultConfig {
+        applicationId "com.creative.sng.app"
+        //    minSdkVersion 19 → 구버전 주석처리
+        //    targetSdkVersion 25 → 구버전 주석처리
+        minSdk 21
+        targetSdk 34
+        versionCode 1
+        versionName "2.2.1"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            //    applicationVariants.all → AGP 7.x 이상에서 동작 안 함
+            //    applicationVariants.all { variant ->
+            //        variant.outputs.each { output ->
+            //            def file = output.outputFile
+            //            output.outputFile = new File(file.parent,
+            //                    file.name.replace("app", "sjsf-sng_" + defaultConfig.versionName))
+            //        }
+            //    }
+        }
+    }
+
+    // ✅ 바로 여기에 추가
+    buildFeatures {
+        viewBinding true
+    }
+
+    lint {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    useLibrary 'org.apache.http.legacy'
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+    }
+
+//    signingConfigs {
+//        config {
+//            keyPassword 'mgs123'
+//            storeFile file('C:/AndroidStudioProjects/AndPro2017.jks')
+//            storePassword 'mgs123'
+//            keyAlias 'App'
+//        }
+//    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // 기존 Support 라이브러리 (AndroidX로 대체됨)
+    // implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4' // ✅ AndroidX 대체
+
+    testImplementation 'junit:junit:4.13.2' // 기존: 4.12 → 최신 버전으로 업데이트
+
+    implementation 'com.google.firebase:firebase-messaging:23.3.1'
+
+    // ✅ 최신 okhttp
+    // implementation 'com.squareup.okhttp3:okhttp:3.2.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
+
+    // ✅ AndroidX appcompat, material, preference
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'androidx.core:core:1.12.0'
+
+    // 🔶 ButterKnife는 더 이상 권장되지 않음 (ViewBinding 사용 권장)
+    // implementation 'com.jakewharton:butterknife:7.0.1'
+    // => 필요 시 유지 가능하나, Jetpack ViewBinding 대체 추천
+
+    implementation 'com.googlecode.android-query:android-query:0.25.9' // 유지
+
+    // Glide 3.x는 구버전 → Glide 4.x로 업그레이드
+    // implementation 'com.github.bumptech.glide:glide:3.7.0'
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+
+    // implementation 'jp.wasabeef:glide-transformations:1.0.6@aar'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+
+    // implementation 'com.google.firebase:firebase-messaging:9.6.1' // ❌ 제외 요청에 따라 주석 처리
+
+    // 기존: implementation 'gun0912.ted:tedpermission:1.0.2'
+    implementation 'io.github.ParkSangGwon:tedpermission-normal:3.3.0' // ✅ AndroidX 호환
+
+    implementation 'com.squareup:otto:1.3.7' // 오래된 라이브러리, 유지 여부 판단 필요
+
+    // implementation files('libs/guava-r09.jar')
+    implementation 'com.google.guava:guava:31.1-android' // 최신 버전 적용
+
+    // gson 및 retrofit 최신화
+    // implementation 'com.google.code.gson:gson:2.7'
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    // implementation 'com.squareup.retrofit2:retrofit:2.2.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    // implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    implementation 'net.jcip:jcip-annotations:1.0' // 유지
+
+    implementation 'androidx.recyclerview:recyclerview:1.3.1' // ✅ RecyclerView 오류 해결
+    implementation 'androidx.fragment:fragment:1.3.6' // ✅ Fragment 관련 오류 해결
+    implementation 'com.jakewharton:butterknife:10.2.3' // ✅ ButterKnife 오류 해결
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+
+    implementation 'jp.wasabeef:glide-transformations:4.3.0' // ✅ CropCircleTransformation 오류 해결
+}
+
+configurations.all {
+    resolutionStrategy {
+        force 'org.jetbrains.kotlin:kotlin-stdlib:1.8.10'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.10'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.10'
+        force 'org.jetbrains.kotlin:kotlin-stdlib-common:1.8.10'
+        force 'com.squareup.okio:okio:3.4.0' // Android 호환 버전
+    }
+}
+
+

@@ -1,0 +1,44 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.8.10'
+
+    repositories {
+        // jcenter() // → 2021년 종료, 비권장
+        // maven {
+        //     url 'https://maven.google.com/'
+        //     name 'Google'
+        // }
+
+        // ↓ 최신 주소로 대체
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies {
+        // classpath 'com.android.tools.build:gradle:2.3.3' // → 구 버전 주석처리
+//        classpath 'com.android.tools.build:gradle:7.4.2' // → 최신 AGP
+        classpath 'com.android.tools.build:gradle:8.1.0' // AGP 최신 버전
+
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // classpath 'com.google.gms:google-services:3.0.0' // → 구버전 Firebase
+        classpath 'com.google.gms:google-services:4.3.15' // ✅ 최신 권장 버전
+    }
+}
+
+allprojects {
+    repositories {
+        // jcenter() // → 종료됨, 비권장
+        // maven { url "https://maven.google.com" } // → 레거시 주소
+
+        // ↓ 최신 주소로 대체
+        google()
+        mavenCentral()
+        maven { url "https://jitpack.io" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
