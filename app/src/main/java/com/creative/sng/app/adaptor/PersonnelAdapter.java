@@ -13,7 +13,6 @@ import com.bumptech.glide.request.RequestOptions;
 
 import com.bumptech.glide.Glide;
 import com.creative.sng.app.R;
-import com.creative.sng.app.util.CustomBitmapPool;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -209,10 +209,10 @@ public class RunningTimeFragment extends Fragment {
     private class ListViewItemClickListener implements AdapterView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            android.support.v4.app.Fragment frag = null;
+            Fragment frag = null;
             Bundle bundle = new Bundle();
 
-            android.support.v4.app.FragmentManager fm = getFragmentManager();
+            FragmentManager fm = getFragmentManager();
             FragmentTransaction fragmentTransaction = fm.beginTransaction();
             fragmentTransaction.replace(R.id.fragmentReplace, frag = new RunningTimeWriteFragment());
             bundle.putString("title",title+"상세");

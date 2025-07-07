@@ -59,7 +59,7 @@ public class NoticeBoardFragment extends Fragment {
 
        // 기존 변수명 유지
        listView = binding.listView1;
-       textTitle = binding.top_title;
+       textTitle = binding.layoutTop.topTitle;
 
        // 텍스트 설정 및 버튼 표시
        textTitle.setText(getArguments().getString("title"));

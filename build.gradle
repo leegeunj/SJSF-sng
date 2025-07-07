@@ -18,12 +18,15 @@ buildscript {
     dependencies {
         // classpath 'com.android.tools.build:gradle:2.3.3' // → 구 버전 주석처리
 //        classpath 'com.android.tools.build:gradle:7.4.2' // → 최신 AGP
-        classpath 'com.android.tools.build:gradle:8.1.0' // AGP 최신 버전
+//        classpath 'com.android.tools.build:gradle:4.2.2'
+        classpath 'com.android.tools.build:gradle:7.4.2'
 
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // classpath 'com.google.gms:google-services:3.0.0' // → 구버전 Firebase
         classpath 'com.google.gms:google-services:4.3.15' // ✅ 최신 권장 버전
+
+        classpath "com.jakewharton:butterknife-gradle-plugin:10.2.3"
     }
 }
 

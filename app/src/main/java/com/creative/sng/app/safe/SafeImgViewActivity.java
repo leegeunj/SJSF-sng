@@ -12,16 +12,15 @@ import android.widget.Toast;
 import com.androidquery.AQuery;
 import com.androidquery.callback.AjaxStatus;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.creative.sng.app.R;
 import com.creative.sng.app.menu.MainFragment;
-import com.creative.sng.app.util.CustomBitmapPool;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 public class SafeImgViewActivity extends AppCompatActivity {
     private static final String TAG = "SafeImgViewActivity";
@@ -64,8 +63,9 @@ public class SafeImgViewActivity extends AppCompatActivity {
 
                 byte[] byteArray =  Base64.decode(imgData, Base64.DEFAULT);
 
-                Glide.with(SafeImgViewActivity.this).load(byteArray)
+                Glide.with(SafeImgViewActivity.this)
                         .asBitmap()
+                        .load(byteArray)
                         .error(R.drawable.no_img)
                         .into(imgView);
 
@@ -99,9 +99,10 @@ public class SafeImgViewActivity extends AppCompatActivity {
         protected void onPostExecute(String sResponse) {
             if (dialog.isShowing()) dialog.dismiss();
             byte[] byteArray =  Base64.decode(imgData, Base64.DEFAULT) ;
-            Glide.with(SafeImgViewActivity.this).load(byteArray)
+            Glide.with(SafeImgViewActivity.this)
                     .asBitmap()
-                    .transform(new CropCircleTransformation(new CustomBitmapPool()))
+                    .load(byteArray)
+                    .apply(RequestOptions.circleCropTransform())
                     .error(R.drawable.no_img)
 //				.signature(new StringSignature(String.valueOf(System.currentTimeMillis())))
                     .into(imgView);
