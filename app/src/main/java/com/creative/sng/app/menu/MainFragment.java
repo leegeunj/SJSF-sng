@@ -28,7 +28,6 @@ import com.creative.sng.app.safe.WorkPerambulatePopupActivity;
 import com.creative.sng.app.util.BackPressCloseSystem;
 import com.creative.sng.app.util.SettingPreference;
 import com.creative.sng.app.util.UtilClass;
-import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.normal.TedPermission;
